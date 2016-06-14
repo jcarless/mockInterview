@@ -1,0 +1,21 @@
+<ul>
+        <li>
+            {{this.name}} <button>Delete</button>
+            <ul>
+                {{#if ../logged_in}}
+                    <li>
+                        <form action="/people/{{this.id}}/tasks/create" method="POST" style="display: inline">
+                            <input type="text" name="task" placeholder="add task here">
+                            <input type="submit" value="assign task">
+                        </form>
+                    </li>
+                {{/if}}
+
+                {{#each this.Tasks }}
+                    <li>
+                        {{this.task}} <button>Delete</button>
+                    </li>
+                {{/each}}
+            </ul>
+        </li>
+</ul>
